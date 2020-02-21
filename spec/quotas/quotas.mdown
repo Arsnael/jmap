@@ -63,6 +63,8 @@ The quota object MUST contain the following fields:
 
 * **name**: `String` The name of the quota object. Useful for managing quotas and use queries for searching.
 
+* **datatypes**: `String[]` A list of all the data types values that are applying to this quota. This allows to assign quotas to separated or shared data types. This MAY include data types the client does not recognise. Clients MUST ignore any unknown data type in the list.
+
 The quota object MAY contain the following field:
 
 * **warnLimit**: `UnsignedInt|null` The warn limit set by this quota object. It can be used to send a warning to a user that he is going to reach the hard limit soon, but no action is taken. If set, it should be lower than the `softLimit` and the `limit`.
@@ -82,7 +84,8 @@ The quota object MAY contain the following field:
       "limit": 2000,
       "scope": "account",
       "name": "bob@example.com",
-      "description": "Personal account usage, bounded by a domain limit"
+      "description": "Personal account usage, bounded by a domain limit",
+      "datatypes" : [ "Mail", "Calendar", "Contact" ]
     }
 
 ## Quota/get
@@ -112,7 +115,8 @@ With response :
       "limit": 2000,
       "scope": "account",
       "name": "bob@example.com",
-      "description": "Personal account usage, bounded by a domain limit"
+      "description": "Personal account usage, bounded by a domain limit",
+      "datatypes" : [ "Mail", "Calendar", "Contact" ]
       }, {
         "id": "3b06df0e-3761-4s74-a92f-74dcc963501x",
         "type": "messageStorageSize",
