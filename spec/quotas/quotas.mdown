@@ -161,11 +161,11 @@ Response:
     }, "0" ],
     ... ]
 
-# Addition to the Mailbox object
+# Addition to the Account object
 
 The following extra property is defined:
 
-* **quotaIds:** `Id[]` (default: `[]`) A list of quota ids bound to that mailbox, or `[]` if that mailbox has no quota restrictions. This value is server-set.
+* **quotaIds:** `Id[]` (default: `[]`) A list of quota ids bound to that account, or `[]` if that account has no quota restrictions. This value is server-set.
 
 # Security considerations
 
