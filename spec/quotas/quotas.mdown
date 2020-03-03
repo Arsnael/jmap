@@ -32,7 +32,11 @@ This document defines one additional capability URI.
 
 ### urn::ietf::params::jmap::quota
 
-This represents support for the Quota data type and associated API methods. Servers supporting this specification MUST add this property to the capabilities object.
+This represents support for the Quota data type and associated API methods. The value of this property in the JMAP session capabilities property is an empty object.
+
+The value of this property in an account’s accountCapabilities property is an object that MUST contain the following information on server capabilities and permissions for that account:
+
+* **quotaIds:** `Id[]` (default: `[]`) A list of quota ids bound to that account, or `[]` if that account has no quota restrictions.
 
 # Quota definition
 
@@ -160,12 +164,6 @@ Response:
       "destroyed": []
     }, "0" ],
     ... ]
-
-# Addition to the Account object
-
-The following extra property is defined:
-
-* **quotaIds:** `Id[]` (default: `[]`) A list of quota ids bound to that account, or `[]` if that account has no quota restrictions. This value is server-set.
 
 # Security considerations
 
