@@ -44,6 +44,11 @@ information on server capabilities and permissions for that account:
 * **quotaIds:** `Id[]` (default: `[]`) A list of quota ids bound to that account, or `[]` if that account has no quota
 restrictions.
 
+## Push
+
+Servers MUST support the JMAP push mechanisms, as specified in [@!RFC8620] Section 7, to receive notifications when
+the state changes for the Quota type defined in this specification.
+
 # Quota definition
 
 The quota is an object that displays the limit set to an account usage as well as the current usage in regard to that limit.
