@@ -22,7 +22,7 @@ Servers MUST support all properties specified for the new data types defined in 
 
 ### Quota
 
-A quota is a numeric upper limit that the server is enforcing. Quotas are applied to JMAP Mailbox objects.
+A quota is a numeric upper limit that the server is enforcing. Quotas are applied to Account objects.
 
 ## Addition to the capabilities object
 
@@ -40,7 +40,7 @@ The value of this property in an account’s accountCapabilities property is an 
 
 # Quota definition
 
-The quota is an object that displays the limit set to a mailbox usage as well as the current usage in regard to that limit.
+The quota is an object that displays the limit set to an account usage as well as the current usage in regard to that limit.
 
 ## The Scope Data Type
 
@@ -119,19 +119,19 @@ With response :
       "accountId": "u33084183",
       "state": "78540",
       "list": [{
-      "id": "2a06df0d-9865-4e74-a92f-74dcc814270e",
-      "resourceType": "count",
-      "used": 1056,
-      "warnLimit": 1600,
-      "softLimit": 1800,
-      "limit": 2000,
-      "scope": "account",
-      "name": "bob@example.com",
-      "description": "Personal account usage, bounded by a domain limit",
-      "datatypes" : [ "Mail", "Calendar", "Contact" ]
+        "id": "2a06df0d-9865-4e74-a92f-74dcc814270e",
+        "resourceType": "count",
+        "used": 1056,
+        "warnLimit": 1600,
+        "softLimit": 1800,
+        "limit": 2000,
+        "scope": "account",
+        "name": "bob@example.com",
+        "description": "Personal account usage",
+        "datatypes" : [ "Mail", "Calendar", "Contact" ]
       }, {
         "id": "3b06df0e-3761-4s74-a92f-74dcc963501x",
-        "type": "messageStorageSize",
+        "resourceType": "size",
         ...
       }, ...],
       "notFound": []
